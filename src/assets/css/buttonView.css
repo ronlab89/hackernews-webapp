@@ -1,0 +1,8 @@
+:root {
+    /* Color styles */
+    --azure: #1797ff;
+    --gray-dark: #606060;
+    --border-button: #d6d6d6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
