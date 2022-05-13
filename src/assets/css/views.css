@@ -19,7 +19,7 @@
     padding: 2rem;
 }
 
-.btn-all {
+.btn-views {
     width: 98px;
     height: 31px;
     padding: 3px 0px 0 0px;
@@ -36,9 +36,15 @@
     line-height: 1.75;
     letter-spacing: normal;
     text-align: center;
+    transition: all .3s ease-in-out;
 }
 
-.btn-all:active {
+.btn-views:hover {
+    border: 1px solid var(--azure);
+    color: var(--azure);
+}
+
+.btn-views:focus {
     border: solid 1px var(--azure);
     color: var(--azure);
 }

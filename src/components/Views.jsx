@@ -16,8 +16,8 @@ const Views = () => {
 
   return (
     <section className='views'>
-        <ButtonView type='button' className='btn-all' onClick={handleClickAll} text='All'/>
-        <ButtonView type='button' className='btn-all' onClick={handleClickFav} text='My faves'/>
+        <ButtonView type='button' className='btn-views' onClick={handleClickAll} text='All'/>
+        <ButtonView type='button' className='btn-views' onClick={handleClickFav} text='My faves'/>
     </section>
   )
 }
