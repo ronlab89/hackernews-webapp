@@ -4,7 +4,9 @@ import '../assets/css/header.css'
 const Header = () => {
   return (
     <header className='header'>
-        <span className='title-header'>HACKER NEWS</span>
+        <span className='title-header'>
+            HACKER NEWS
+        </span>
     </header>
   )
 }
