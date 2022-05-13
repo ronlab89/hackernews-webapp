@@ -4,6 +4,7 @@
     --shadow-dropdownlist: 0 2px 2px 0 #dad8d8;
     --text-dropdown: #343434;
     --border-dropdown: #2e2e2e;
+    --hover-item-drop: rgba(234, 234, 234, 0.2);
     --white: #fff;
     --black: #000;
   
@@ -63,9 +64,9 @@
 .drop-menu {
     position: absolute;
     top: 100%;
-    width: 240px;
-    height: 139px;
-    padding: 15px 14px 12px 10px;
+    width: 248px;
+    height: 138px;
+    padding: 0px 14px 12px 0px;
     margin: 0 0 0 1px;
     box-shadow: var(--shadow-dropdownlist);
     background-color: var(--white);
@@ -73,11 +74,35 @@
 }
 
 .drop-item {
-    width: 240px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 248px;
     height: 46px;
-    padding: 6px 89px 0px 5px;
+    padding: 4px 9px 0px 5px;
     cursor: pointer;
 }
 .drop-item:hover {
-    opacity: 0.2;
+    background-color: var(--hover-item-drop);
+}
+
+.drop-framework {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.drop-framework img {
+    width: 24px;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+}
+.drop-framework span {
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: var(--text-dropdown);
 }
