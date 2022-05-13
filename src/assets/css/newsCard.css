@@ -16,3 +16,61 @@
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
+
+.card-container {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin: 0 auto;
+    padding: 40px 0;
+    padding-bottom: 4rem;
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border: 1px solid var(--border-post);
+    border-radius: 6px;
+}
+
+.card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-info {
+    position: absolute;
+    left: 20px;
+    width: 80%;
+}
+
+.card-info span {
+    margin-left: 0.5rem;
+}
+
+.card-info p {
+    width: 90%;
+    margin-top: 0.4rem;
+}
+
+.card-fav {
+    position: absolute;
+    top: -0.2px;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    background-color: var(--bg-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 6px 6px 0px;
+}

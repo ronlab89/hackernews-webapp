@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ItemList = ({liStyle, divStyle, img, altImage, liText, handleClickFramework}) => {
+const ItemList = ({liStyle, divStyle, img, altImage, liText, value, handleClickFramework}) => {
   return (
-    <li className={liStyle} onClick={handleClickFramework}>
+    <li className={liStyle}>
         <div className={divStyle}>
             <img src={img} alt={altImage} />
-            <span>{liText}</span>
+            <span id={value} onClick={handleClickFramework}>{liText}</span>
         </div>
     </li>
   )
