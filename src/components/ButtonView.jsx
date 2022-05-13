@@ -1,8 +1,14 @@
 import React from 'react'
 
-const ButtonView = () => {
+const ButtonView = ({type, className, onClick, text}) => {
   return (
-    <div>ButtonView</div>
+    <button
+    type={type}
+    className={className}
+    onClick={onClick}
+    >
+    {text}
+    </button>
   )
 }
 
