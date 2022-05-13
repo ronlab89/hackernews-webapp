@@ -1,0 +1,15 @@
+:root {
+    /* Color styles */
+    --bg-gray: #d9d9d9;
+    --shadow-dropdownlist: 0 2px 2px 0 #dad8d8;
+    --text-dropdown: #343434;
+    --border-dropdown: #2e2e2e;
+    --white: #fff;
+    --black: #000;
+  
+    /* Font Styles */
+    --font: 'Roboto', sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
+  
