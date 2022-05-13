@@ -1,11 +1,10 @@
 :root {
+  /* Color styles */
   --azure: #1797ff;
   --bg-blue: #1890ff;
   --bg-gray: #d9d9d9;
-  --bg-body: linear-gradient(to bottom, #ececec -32%, #fff 124%);
-  --shadow-header: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+  --bg-body: #fcfcfc;
   --shadow-dropdownlist: 0 2px 2px 0 #dad8d8;
-  --text-header: #3b3b3b;
   --text-dropdown: #343434;
   --gray-dark: #606060;
   --gray-medium: #6b6b6b;
@@ -17,12 +16,21 @@
   --border-dropdown: #2e2e2e;
   --white: #fff;
   --black: #000;
+
+  /* Font Styles */
   --font: 'Roboto', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
 
 * {
   margin: 0;
   padding: 0;
+}
+
+.main {
+  width: 100%;
+  min-height: 75vh;
+  height: 100vh;
+  background-color: var(--bg-body);
 }

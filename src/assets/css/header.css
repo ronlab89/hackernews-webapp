@@ -1,0 +1,17 @@
+:root {
+    /* Color styles */
+    --text-header: #3b3b3b;
+    --bg-header: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+    --shadow-header: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+}
+
+.header {
+    width: 100%;
+    height: 114px;
+    box-shadow: var(--shadow-header);
+    background-image: var(--bg-header);
+}
+
+.title-header {
+
+}
