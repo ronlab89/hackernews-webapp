@@ -7,6 +7,8 @@
     --font-header: 'Baskervville', serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
+
 .header {
     max-width: 100%;
     height: 85px;
