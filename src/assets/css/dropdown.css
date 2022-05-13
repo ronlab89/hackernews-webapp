@@ -46,8 +46,12 @@
     border-top: 5px solid black;
 }
 
-.drop-check {
+.drop-disabled {
     display: none;
+}
+
+.drop-active {
+    display: block;
 }
 
 .drop-text {
