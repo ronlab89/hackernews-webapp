@@ -19,12 +19,7 @@ const Dropdown = () => {
             <span className='drop-text'>Select your news</span>
         </div>
         <ul className={`drop-menu ${check ? 'drop-active' : 'drop-disabled'}`}>
-            <li className='drop-item'>
-                <div className="drop-framework">
-                    <img src={angular} alt="Angular Logo" />
-                    <span>Angular</span>
-                </div>
-            </li>
+            
             <li className='drop-item'>
                 <div className="drop-framework"> 
                     <img src={reactjs} alt="ReactJS Logo" />
