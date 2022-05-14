@@ -8,6 +8,7 @@ import vue from '../assets/images/image-141.png'
 
 import ItemList from './ItemList'
 import NewsCard from './NewsCard'
+import Loading from './Loading'
 
 const Dropdown = () => {
 
@@ -49,9 +50,12 @@ const Dropdown = () => {
     </section>
     <section className='news-section'>
         {
-            loading ? 
-            <p>Cargando...</p> :
-            <NewsCard />
+            loading && 
+            <Loading />    
+        }{
+            (!data) ?
+            <NewsCard data={data}/> :
+            <h1 className='welcome'>Welcome to the News App for frontend developers</h1>
         }
     </section>
     </>

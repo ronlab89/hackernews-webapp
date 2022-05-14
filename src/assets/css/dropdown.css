@@ -116,3 +116,11 @@
     padding: 5rem;
     margin: 0px auto;
 }
+
+.welcome {
+    text-align: center;
+    color: var(--text-dropdown);
+    font-family: var(--font);
+    font-size: 3rem;
+    padding: 3rem;
+}
