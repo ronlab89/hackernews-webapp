@@ -113,7 +113,7 @@
 }
 
 .news-section {
-    padding: 5rem;
+    padding: 5rem 0rem 5rem 4rem;
     margin: 0px auto;
 }
 
@@ -123,4 +123,16 @@
     font-family: var(--font);
     font-size: 3rem;
     padding: 3rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .drop-section {
+        left: 60px;
+    }
+    .welcome {
+        display: block;
+        margin: 0px auto;
+        font-size: 1.3rem;
+        padding: 0.5rem;
+    }
 }
