@@ -11,12 +11,19 @@
     --border-post: #979797;
     --white: #fff;
     --black: #000;
+    --shadow-dropdownlist: 0 2px 2px 0 #dad8d8;
+    --azure: #1797ff;
   
     /* Font Styles */
     --font: 'Roboto', sans-serif;
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
+
+
+.general-card {
+    width: fit-content;
+}
 
 .card {
     /* position: relative; */
@@ -43,6 +50,7 @@
     height: 90%;
     padding: 6px 14px 0px 10px;
     background-color: var(--white);
+    cursor: pointer;
 }
 
 .card-info .time-icon {
@@ -81,9 +89,31 @@
     right: 0;
     width: 15%;
     height: 100%;
-    /* background-color: var(--bg-gray-fav); */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0px 6px 6px 0px;
+}
+
+.card-fav .favorite img {
+    cursor: pointer;
+}
+
+.card-url {
+    width: 98%;
+    height: 30px;
+    padding: 5px;
+    background-color: var(--white);
+    border-radius: 0px 0px 6px 6px;
+    box-shadow: var(--shadow-dropdownlist);
+}
+.card-url a {
+    font-family: var(--font);
+    font-size: 0.8rem;    
+    text-decoration: none;
+    color: var(--text-page);
+    transition: all .3s ease-in-out;
+}
+.card-url a:hover {
+    color: var(--azure);
 }

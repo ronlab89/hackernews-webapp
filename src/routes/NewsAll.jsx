@@ -13,8 +13,6 @@ const NewsAll = () => {
 
   const [frameworkValue, setFrameworkValue] = useState(frameworkSet);
 
-  console.log(frameworkValue);
-
 //Local Storage Set
   useEffect(() => {
     localStorage.setItem('news', frameworkValue);

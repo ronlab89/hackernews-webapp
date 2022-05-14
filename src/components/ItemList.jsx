@@ -6,7 +6,6 @@ const ItemList = ({liStyle, divStyle, img, altImage, liText, value, setFramework
     e.preventDefault();
     const idFramework = e.target.id;
     idFramework !== '' && setFrameworkValue(idFramework);
-    localStorage.setItem('news', idFramework);
     setCheck(!check); 
 }
 
