@@ -1,16 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export const useGetApi = () => {
+export const useGetApi = (frameworkValue) => {
 
     const [data, setData] = useState(null);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState('')
     const [loading, setLoading] = useState(false);
 
-    const newsGetData = async(framework) => {
+    // Get API
+    useEffect(() => {
+        if(frameworkValue) {
+            newsGetData(frameworkValue);
+        }
+    }, [frameworkValue])
+
+    const newsGetData = async(frameworkValue) => {
+        setLoading(true);
         try {
-            setLoading(true);
-            const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${framework}&page=0`);
+            const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${frameworkValue}&page=0`);
             const data = await res.json();
+            console.log(data.hits)
             setData(data.hits);
         } catch (error) {
             console.log(error);

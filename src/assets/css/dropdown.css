@@ -113,8 +113,16 @@
 }
 
 .news-section {
-    padding: 5rem 0rem 5rem 4rem;
-    margin: 0px auto;
+    padding-top: 5rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .welcome {

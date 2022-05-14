@@ -1,24 +1,19 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import '../assets/css/views.css'
 import ButtonView from './ButtonView'
 
 const Views = () => {
 
-    const handleClickAll = (e) => {
-        e.preventDefault();
-        console.log('Click from All');
-    }
-
-    const handleClickFav = (e) => {
-        e.preventDefault();
-        console.log('Click from favorites');
-    }
-
   return (
-    <section className='views'>
-        <ButtonView type='button' className='btn-views' onClick={handleClickAll} text='All'/>
-        <ButtonView type='button' className='btn-views' onClick={handleClickFav} text='My faves'/>
-    </section>
+    <nav className='views'>
+      <NavLink to={'/'}>
+        <ButtonView className='btn-views' text='All'/>
+      </NavLink>
+      <NavLink to={'/favorites'}>
+        <ButtonView className='btn-views' text='My faves'/>
+      </NavLink>
+    </nav>
   )
 }
 

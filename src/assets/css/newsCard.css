@@ -18,23 +18,13 @@
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Baskervville&display=swap');
 
-.card-container {
-    max-width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    margin: 0 auto;
-    padding: 40px 0;
-    padding-bottom: 4rem;
-}
-
 .card {
-    position: relative;
+    /* position: relative; */
     width: 500px;
     height: 90px;
     margin: 0 auto;
     background-color: var(--white);
+    background-color: var(--bg-gray-fav);
     border: 1px solid var(--border-post);
     border-radius: 6px;
 }
@@ -49,9 +39,10 @@
 }
 
 .card-info {
-    position: absolute;
-    left: 20px;
     width: 80%;
+    height: 90%;
+    padding: 6px 14px 0px 10px;
+    background-color: var(--white);
 }
 
 .card-info .time-icon {
@@ -85,12 +76,12 @@
 }
 
 .card-fav {
-    position: absolute;
+    position: relative;
     top: -0.2px;
     right: 0;
     width: 15%;
     height: 100%;
-    background-color: var(--bg-gray-fav);
+    /* background-color: var(--bg-gray-fav); */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,5 +1,5 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import Dropdown from './components/Dropdown'
 
 import Header from './components/Header'
 import Views from './components/Views'
@@ -10,7 +10,9 @@ function App() {
     <main className='main'>
       <Header />
       <Views />
-      <Dropdown />
+      <section className='container'>
+        <Outlet />
+      </section>
     </main>
   )
 }
