@@ -18,7 +18,6 @@ export const useGetApi = (frameworkValue) => {
         try {
             const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${frameworkValue}&page=0`);
             const data = await res.json();
-            console.log(data.hits)
             setData(data.hits);
         } catch (error) {
             console.log(error);

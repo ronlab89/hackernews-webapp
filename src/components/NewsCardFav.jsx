@@ -2,30 +2,22 @@ import React, { useContext, useState } from 'react'
 import moment from 'moment';
 import '../assets/css/newsCard.css'
 import timeIcon from '../assets/images/iconmonstr-time-2.svg'
-import heart from '../assets/images/iconmonstr-favorite-2.svg'
-import heartFav from '../assets/images/iconmonstr-favorite-3.svg'
+import favNews from '../assets/images/iconmonstr-favorite-3.svg'
 
 import { favoriteContext } from '../context/favoriteContext';
 
-const NewsCard = ({news}) => {
+const NewsCard = ({news}, key) => {
     const {favoriteNews, setFavoriteNews} = useContext(favoriteContext);
     const {author, story_title, story_url, created_at} = news;
 
-    const [fav, setFav] = useState(false);
-    const [url, setUrl] = useState(false);
+    console.log('nanoid: ', key);
+    console.log('id: ', news.nanoid);
 
-    const favNews = fav ? heartFav : heart;
+    const [url, setUrl] = useState(false);
 
     const handleClickFav = (e) => {
         e.preventDefault();
-        setFav(!fav);
-        const favorite = {author: author, 
-            story_title: story_title, 
-            story_url: story_url,
-            created_at: created_at,
-            favNews: favNews
-        }
-        setFavoriteNews((prev) => [...prev, favorite]);
+        setFavoriteNews(favoriteNews.filter(item => item.author !== news.author));
     }
 
     const handleClickUrl = (e) => {
