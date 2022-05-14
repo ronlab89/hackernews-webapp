@@ -5,21 +5,15 @@ export const useGetApi = (frameworkValue) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false);
-    const [blocks, setBlocks] = useState(1);
+    const [blocks, setBlocks] = useState(0);
 
     //More News
-    const handleMore = async () => {
-        setLoading(true);
-        try {
-            const res = await newsGetData(frameworkValue, blocks + 1)
-            const moreNews = res.json()
-            setBlocks(prev => prev + 1)
-            setData(prev => [...prev, moreNews])
-        } catch (error) {
-            console.log(error);
-        }finally {
-            setLoading(false);
-        }
+    const handleMore = () => {
+        const moreNews = newsGetData(frameworkValue, blocks).then(result => {
+            console.log(moreNews);
+        })
+        setBlocks(prev => prev + 1)
+        setData(prev => [...prev, moreNews])
     }
 
     //Fetch API
@@ -40,7 +34,7 @@ export const useGetApi = (frameworkValue) => {
     // Get API
     useEffect(() => {
         if(frameworkValue) {
-           newsGetData(frameworkValue, 0);
+           newsGetData(frameworkValue, blocks);
         }
     }, [frameworkValue])
 

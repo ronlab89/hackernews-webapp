@@ -1,6 +1,6 @@
 import React from 'react'
 import { useGetApi } from '../hooks/useGetApi';
-
+import {nanoid} from 'nanoid'
 import NewsCard from './NewsCard'
 import Loading from './Loading'
 import ButtonView from './ButtonView'
@@ -8,8 +8,6 @@ import ButtonView from './ButtonView'
 const PaintNews = ({frameworkValue}) => {
 
     const {data, loading, handleMore} = useGetApi(frameworkValue);
-
-    console.log(data);
 
   return (
     <section className='news-section'>
@@ -22,7 +20,7 @@ const PaintNews = ({frameworkValue}) => {
                 {
                     data.map(news => {
                         if(news.author !== null && news.story_title !== null && news.story_url !== null && news.created_at !== null){
-                            return <NewsCard key={news.created_at_i} news={news}/>
+                            return <NewsCard key={nanoid(10)} news={news}/>
                         }
                     })
                 }

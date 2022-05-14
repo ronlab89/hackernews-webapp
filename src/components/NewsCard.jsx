@@ -19,13 +19,17 @@ const NewsCard = ({news}) => {
     const handleClickFav = (e) => {
         e.preventDefault();
         setFav(!fav);
-        const favorite = {author: author, 
-            story_title: story_title, 
-            story_url: story_url,
-            created_at: created_at,
-            favNews: favNews
+        if(favoriteNews) {
+            const favorite = {
+                author: author, 
+                story_title: story_title, 
+                story_url: story_url,
+                created_at: created_at,
+                favNews: favNews
+            }
+            return setFavoriteNews((prev) => [...prev, favorite]);
         }
-        setFavoriteNews((prev) => [...prev, favorite]);
+        
     }
 
     const handleClickUrl = (e) => {

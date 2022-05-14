@@ -6,13 +6,16 @@ import {nanoid} from 'nanoid'
 const Favorites = () => {
 
   const {favoriteNews} = useContext(favoriteContext);
+
   return (
-    <section className='card-container'>
-      {
+    <section className='news-section'>
+      <section className='card-container'>
+        {
           favoriteNews.map(news => {
-                  return <NewsCardFav key={nanoid(6)} news={news}/>
+            return <NewsCardFav key={nanoid(6)} news={news}/>
           })
-      }
+        }
+      </section>
     </section>
   )
 }
