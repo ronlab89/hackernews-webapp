@@ -30,10 +30,15 @@
     width: 500px;
     height: 90px;
     margin: 0 auto;
-    background-color: var(--white);
     background-color: var(--bg-gray-fav);
     border: 1px solid var(--border-post);
     border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    background-color: rgba(217, 217, 217, 4);
+    opacity: 40%;
 }
 
 .card-body {
