@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 export const useGetApi = () => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false);
 

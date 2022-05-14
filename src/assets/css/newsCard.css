@@ -1,6 +1,7 @@
 :root {
     /* Color styles */
     --bg-gray: #d9d9d9;
+    --bg-gray-fav: rgba(217, 217, 217, 0.6);
     --bg-body: #fcfcfc;
     --gray-dark: #606060;
     --gray-medium: #6b6b6b;
@@ -53,13 +54,34 @@
     width: 80%;
 }
 
+.card-info .time-icon {
+    width: 16px;
+    object-fit: contain;
+}
+
 .card-info span {
     margin-left: 0.5rem;
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--text-time);
 }
 
 .card-info p {
     width: 90%;
     margin-top: 0.4rem;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.25px;
+    color: var(--gray-medium);
 }
 
 .card-fav {
@@ -68,7 +90,7 @@
     right: 0;
     width: 15%;
     height: 100%;
-    background-color: var(--bg-gray);
+    background-color: var(--bg-gray-fav);
     display: flex;
     justify-content: center;
     align-items: center;

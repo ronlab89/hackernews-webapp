@@ -25,7 +25,8 @@ const Dropdown = () => {
     const handleClickFrameworks = (e) => {
         e.preventDefault();
         const idFramework = e.target.id;
-        idFramework !== '' && setFrameworkValue(idFramework); 
+        idFramework !== '' && setFrameworkValue(idFramework);
+        setCheck(!check); 
     }
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const Dropdown = () => {
         }
     }, [frameworkValue])
 
-    // console.log(data);
+    console.log(data);
 
   return (
     <>
@@ -53,7 +54,7 @@ const Dropdown = () => {
             loading && 
             <Loading />    
         }{
-            (!data) ?
+            (data !== null) ?
             <NewsCard data={data}/> :
             <h1 className='welcome'>Welcome to the News App for frontend developers</h1>
         }
