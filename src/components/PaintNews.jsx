@@ -3,10 +3,13 @@ import { useGetApi } from '../hooks/useGetApi';
 
 import NewsCard from './NewsCard'
 import Loading from './Loading'
+import ButtonView from './ButtonView'
 
 const PaintNews = ({frameworkValue}) => {
 
-    const {data, error, loading, newsGetData} = useGetApi(frameworkValue);
+    const {data, loading, handleMore} = useGetApi(frameworkValue);
+
+    console.log(data);
 
   return (
     <section className='news-section'>
@@ -23,6 +26,9 @@ const PaintNews = ({frameworkValue}) => {
                         }
                     })
                 }
+                <div>
+                <ButtonView type='button' className='btn-more' onClick={handleMore} text='More news'/>
+                </div>
             </section>
             :
             <h1 className='welcome'>Welcome to the News App for frontend developers</h1>

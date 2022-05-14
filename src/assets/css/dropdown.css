@@ -124,6 +124,7 @@
     justify-content: center;
     align-content: center;
     align-items: stretch;
+    padding-bottom: 10rem;
 }
 
 .welcome {

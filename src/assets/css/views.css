@@ -3,6 +3,7 @@
     --azure: #1797ff;
     --gray-dark: #606060;
     --border-button: #d6d6d6;
+    --white: #fff;
 
     /* Font Styles */
     --font: 'Roboto', sans-serif;
@@ -47,6 +48,32 @@
 .btn-views:focus {
     border: solid 1px var(--azure);
     color: var(--azure);
+}
+
+.btn-more {
+    width: 160px;
+    height: 60px;
+    padding: 3px 0px 0 0px;
+    border-radius: 6px;
+    border: solid 1px var(--border-button);
+    background-color: var(--azure);
+    color: var(--white);
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.btn-more:hover {
+    border: 1px solid var(--azure);
+    color: var(--azure);
+    background-color: var(--white);
 }
 
 /* Responsive Design */

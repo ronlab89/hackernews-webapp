@@ -9,14 +9,12 @@ const FavoriteProvider = ({children}) => {
     if(localFavorite) {
         favoriteSet = localFavorite;
     }
-    
-      useEffect(() => {
-        localStorage.setItem('favorite', favoriteNews);
-      }, [])
 
     const [favoriteNews, setFavoriteNews] = useState([]);
 
-    console.log(favoriteNews);
+    useEffect(() => {
+        localStorage.setItem('favorite', favoriteNews);
+      }, [favoriteNews]);
 
   return (
       <favoriteContext.Provider value={{favoriteNews: favoriteNews, setFavoriteNews: setFavoriteNews}}> 
