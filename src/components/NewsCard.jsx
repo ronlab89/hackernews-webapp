@@ -14,23 +14,16 @@ const NewsCard = ({news}) => {
     const [fav, setFav] = useState(false);
     const [url, setUrl] = useState(false);
 
-    const favNews = fav ? heartFav : heart;
-
     const handleClickFav = (e) => {
         e.preventDefault();
+        setFavoriteNews((prev) => [...prev, {
+            author: author, 
+            story_title: story_title, 
+            story_url: story_url,
+            created_at: created_at
+        }]);
         setFav(!fav);
-        if(favoriteNews) {
-            const favorite = {
-                author: author, 
-                story_title: story_title, 
-                story_url: story_url,
-                created_at: created_at,
-                favNews: favNews
-            }
-            return setFavoriteNews((prev) => [...prev, favorite]);
         }
-        
-    }
 
     const handleClickUrl = (e) => {
         e.preventDefault();
@@ -48,7 +41,7 @@ const NewsCard = ({news}) => {
                 </div>
                 <div className="card-fav">
                     <div className="favorite" onClick={handleClickFav}>
-                        <img src={favNews} alt="Heart Logo" />
+                        <img src={fav ? heartFav : heart} alt="Heart Logo" />
                     </div>
                 </div>
             </div>

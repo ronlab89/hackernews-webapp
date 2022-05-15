@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export const useGetApi = (frameworkValue) => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false);
     const [blocks, setBlocks] = useState(0);
