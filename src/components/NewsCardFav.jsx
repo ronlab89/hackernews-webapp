@@ -6,19 +6,19 @@ import heart from '../assets/images/iconmonstr-favorite-2.svg'
 import heartFav from '../assets/images/iconmonstr-favorite-3.svg'
 import { favoriteContext } from '../context/favoriteContext';
 
-const NewsCardFav = ({news}) => {
+const NewsCardFav = (newsFav) => {
     const {favoriteNews, setFavoriteNews} = useContext(favoriteContext);
-    const {author, story_title, story_url, created_at} = news;
+    // const {id, author, story, url: story_url, created, fav: favoriteHeart} = newsFav;
 
-    const [fav, setFav] = useState(false);
+    const [favorite, setFavorite] = useState(false);
     const [url, setUrl] = useState(false);
 
-    const favNews = fav ? heart : heartFav;
+    const favNews = favorite ? heart : heartFav;
 
     const handleClickFav = (e) => {
         e.preventDefault();
-        setFav(!fav);
-        setFavoriteNews(favoriteNews.filter(item => item.author !== news.author));
+        setFav(!favorite);
+        setFavoriteNews(favoriteNews.filter(item => item));
     }
 
     const handleClickUrl = (e) => {
@@ -27,25 +27,31 @@ const NewsCardFav = ({news}) => {
     }
 
   return (
-    <article className='general-card'>    
-            <div className="card">
-            <div className="card-body">
-                <div className="card-info" onClick={handleClickUrl}>
-                    <img src={timeIcon} alt="Clock Icon" className='time-icon' />
-                    <span>{moment().fromNow(created_at)} by {author}</span>
-                    <p>{story_title}</p>
-                </div>
-                <div className="card-fav">
-                    <div className="favorite" onClick={handleClickFav}>
-                        <img src={favNews} alt="Heart Logo" />
+    <>
+    {
+        favoriteNews.map(item => {
+            <article className='general-card'>    
+                <div className="card">
+                <div className="card-body">
+                    <div className="card-info" onClick={handleClickUrl}>
+                        <img src={timeIcon} alt="Clock Icon" className='time-icon' />
+                        <span>{moment().fromNow(item.created)} by {item.author}</span>
+                        <p>{item.story}</p>
+                    </div>
+                    <div className="card-fav">
+                        <div className="favorite" onClick={handleClickFav}>
+                            <img src={favNews} alt="Heart Logo" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            {url &&
-            <div className="card-url"><a href={story_url} target='_blank'>{story_url}</a></div>
+                {url &&
+                <div className="card-url"><a href={item.url} target='_blank'>{item.url}</a></div>
             }
-        </div>
-    </article>
+            </div>
+        </article>
+        })
+    }
+    </>
   )
 }
 

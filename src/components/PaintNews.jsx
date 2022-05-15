@@ -20,7 +20,7 @@ const PaintNews = ({frameworkValue}) => {
                 {
                     data.map(news => {
                         if(news.author !== null && news.story_title !== null && news.story_url !== null && news.created_at !== null){
-                            return <NewsCard key={nanoid(10)} news={news}/>
+                            return <NewsCard key={news.created_at_i} news={news}/>
                         }
                     })
                 }

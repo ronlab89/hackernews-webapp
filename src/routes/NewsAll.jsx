@@ -2,12 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import Dropdown from '../components/Dropdown'
 import PaintNews from '../components/PaintNews';
 
-import { favoriteContext } from '../context/favoriteContext';
-
 const NewsAll = () => {
-
-  const {favoriteNews, setFavoriteNews} = useContext(favoriteContext);
-
+  
   let frameworkSet;
   const frameworkLocal = localStorage.getItem('news');
 

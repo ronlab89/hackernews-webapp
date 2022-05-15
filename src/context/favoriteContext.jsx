@@ -4,19 +4,34 @@ const favoriteContext = React.createContext();
 
 const FavoriteProvider = ({children}) => {
     
-    let favoriteSet;
-    const localFavorite = localStorage.getItem('favorite');
-    if(localFavorite) {
-        favoriteSet = localFavorite;
-    }
     const [favoriteNews, setFavoriteNews] = useState([]);
+
+    const updateFavoriteNews = (favorite) => {
+        // console.log(favorite);
+        const update = [...favoriteNews]
+        const isFavorite = favoriteNews.indexOf(favorite.id);
+        if(isFavorite >= 0) {
+            update.splice(isFavorite, 1);
+        }else {
+            update.push(favorite)
+        }
+        setFavoriteNews(update);
+    }
+
+    console.log(favoriteNews);
     
-    useEffect(() => {
-        localStorage.setItem('favorite', favoriteNews);
-      }, [favoriteNews]);
+    // let favoriteSet;
+    // const localFavorite = localStorage.getItem('favorite');
+    // if(localFavorite) {
+    //     favoriteSet = localFavorite;
+    // }
+    
+    // useEffect(() => {
+    //     localStorage.setItem('favorite', favoriteNews);
+    //   }, [favoriteNews]);
 
   return (
-      <favoriteContext.Provider value={{favoriteNews: favoriteNews, setFavoriteNews: setFavoriteNews}}> 
+      <favoriteContext.Provider value={{favoriteNews: favoriteNews, setFavoriteNews: setFavoriteNews, updateFavoriteNews}}> 
           {children}
       </favoriteContext.Provider>
   )

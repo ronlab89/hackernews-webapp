@@ -123,6 +123,10 @@
     color: var(--azure);
 }
 
+.hidden_id {
+    display: none;
+}
+
 /* Responsive Design */
 
 /* Mobile devices */
