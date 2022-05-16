@@ -9,7 +9,7 @@ import { favoriteContext } from '../context/favoriteContext';
 
 const Favorites = () => {
 
-  const {favoriteNews, setFavoriteNews} = useContext(favoriteContext);
+  const {favoritesCard} = useContext(favoriteContext);
 
     const [url, setUrl] = useState(false);
 
@@ -23,7 +23,7 @@ const Favorites = () => {
       <section className='card-container'>
         <>
     {
-        favoriteNews.map(item => {
+        favoritesCard.map(item => {
           return (
             <article className='general-card' key={item.id}>    
                 <div className="card">
@@ -47,6 +47,7 @@ const Favorites = () => {
         )
         })
     }
+    
     </>
       </section>
     </section>

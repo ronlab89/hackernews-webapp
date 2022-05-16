@@ -9,25 +9,25 @@ import { favoriteContext } from '../context/favoriteContext';
 
 const NewsCard = ({news}) => {
     const {author, story_title, story_url, created_at, created_at_i} = news;
-    const {updateFavoriteNews} = useContext(favoriteContext);
-    
-    const [fav, setFav] = useState(false);
-    const [url, setUrl] = useState(false);
+    const {updateFavoriteNews, favoriteNews, updateFavoritesCard, favoritesCard} = useContext(favoriteContext);
 
-    const heartFavorite = fav ? heartFav : heart;
+    const [url, setUrl] = useState(false);
+    
+    const heartFavorite = favoriteNews.includes(created_at_i) ? heartFav : heart;
+
 
     const handleClickFav = (e) => {
         e.preventDefault();
-        setFav(!fav);
+        updateFavoriteNews(created_at_i);
         const favorite = {
-                id: created_at_i,
-                author: author,
-                story: story_title,
-                url: story_url,
-                created: created_at,
-                fav: 'heartFav'
-            };
-        updateFavoriteNews(favorite);
+            id: created_at_i,
+            author: author,
+            story: story_title,
+            url: story_url,
+            created: created_at,
+        };
+        updateFavoritesCard(favorite);
+        
     }
 
     const handleClickUrl = (e) => {
@@ -48,7 +48,7 @@ const NewsCard = ({news}) => {
                 </div>
                 <div className="card-fav">
                     <div className="favorite" onClick={handleClickFav}>
-                        <img src={heartFavorite} alt="Heart Logo" />
+                        <img src={heartFavorite} alt="Heart Logo" id={created_at_i} />
                     </div>
                 </div>
             </div>

@@ -7,13 +7,22 @@ export const useGetApi = (frameworkValue) => {
     const [loading, setLoading] = useState(false);
     const [blocks, setBlocks] = useState(0);
 
+    // console.log(frameworkValue, blocks);
+
     //More News
-    const handleMore = () => {
-        const moreNews = newsGetData(frameworkValue, blocks).then(result => {
-            console.log(moreNews);
-        })
-        setBlocks(prev => prev + 1)
-        setData(prev => [...prev, moreNews])
+    const handleMore = async() => {
+        setLoading(true);
+        try {
+            const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${frameworkValue}&page=${blocks}`);
+            const moreNews = await res.json()
+            setBlocks(prev => prev + 1)
+            setData([...data, moreNews.hits])
+        } catch (error) {
+            console.log(error);
+            setError(error.message);
+        }finally {
+            setLoading(false);
+        }
     }
 
     //Fetch API
